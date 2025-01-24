@@ -24,5 +24,4 @@ public class DemoMultiContextApplication {
                     .profiles("orders")
                 .run(args);
     }
-
 }
