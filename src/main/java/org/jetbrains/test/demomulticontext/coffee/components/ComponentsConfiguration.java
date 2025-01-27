@@ -5,7 +5,6 @@ import org.jetbrains.test.demomulticontext.coffee.components.model.ComponentsRep
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +15,6 @@ import java.io.IOException;
 @ComponentScan
 @Configuration
 @EnableAutoConfiguration
-@EnableJdbcRepositories
 public class ComponentsConfiguration {
 
 }

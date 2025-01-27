@@ -1,0 +1,22 @@
+services:
+  mysql:
+    image: mysql:9.1.0
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=components
+      - MYSQL_PASSWORD=components
+      - MYSQL_DATABASE=components
+    profiles:
+      - components
+  postgres:
+    image: postgres:17.0-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=orders
+      - POSTGRES_USER=orders
+      - POSTGRES_DB=orders
+    profiles:
+      - orders
