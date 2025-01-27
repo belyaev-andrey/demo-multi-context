@@ -16,11 +16,9 @@ public class DemoMultiContextApplication {
                     .web(WebApplicationType.NONE)
                 .child(ComponentsConfiguration.class)
                     .web(WebApplicationType.SERVLET)
-                    .properties("server.servlet.context-path=/api/components", "server.port=8080")
                     .profiles("components")
                 .sibling(OrdersConfiguration.class)
                     .web(WebApplicationType.SERVLET)
-                    .properties("server.servlet.context-path=/api/orders", "server.port=8081")
                     .profiles("orders")
                 .run(args);
     }
