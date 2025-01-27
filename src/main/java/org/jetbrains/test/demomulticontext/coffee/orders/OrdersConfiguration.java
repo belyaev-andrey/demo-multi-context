@@ -1,5 +1,7 @@
 package org.jetbrains.test.demomulticontext.coffee.orders;
 
+import org.jetbrains.test.demomulticontext.coffee.orders.model.Order;
+import org.jetbrains.test.demomulticontext.coffee.orders.model.OrdersRepository;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,9 +21,15 @@ public class OrdersConfiguration {
 
 @RestController
 class OrdersApi {
+    private final OrdersRepository ordersRepository;
+
+    public OrdersApi(OrdersRepository ordersRepository) {
+        this.ordersRepository = ordersRepository;
+    }
+
     @GetMapping(path = "/api/orders", produces = "application/json")
-    public ResponseEntity<String> getAll() {
-        return ResponseEntity.ok().body("Orders");
+    public ResponseEntity<Iterable<Order>> getAll() {
+        return ResponseEntity.ok().body(ordersRepository.findAll());
     }
 
     @ExceptionHandler
