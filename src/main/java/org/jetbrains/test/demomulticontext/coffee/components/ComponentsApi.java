@@ -34,7 +34,7 @@ class ComponentsApi {
     }
 
     @ExceptionHandler
-    public ResponseEntity<String> handle(IOException ex) {
+    public ResponseEntity<String> handle(Exception ex) {
         return ResponseEntity.status(500).body("Error in components: " + ex.getMessage());
     }
 }
