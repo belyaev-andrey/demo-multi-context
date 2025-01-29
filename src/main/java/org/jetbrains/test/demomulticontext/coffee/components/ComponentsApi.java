@@ -6,8 +6,6 @@ import org.jetbrains.test.demomulticontext.coffee.components.model.Component;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-
 @RestController
 @RequestMapping(path = "/api")
 class ComponentsApi {
